@@ -1,0 +1,118 @@
+*{ box-sizing: border-box; }
+
+body {
+  height: 100%;
+  max-width: 100%;
+  position: relative;
+  /* background: #24C6DC;
+  background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);
+  background: linear-gradient(to right, #514A9D, #24C6DC); */
+  background-color: #2C2C2B;
+}
+
+h1{ text-align: center; color: #FAEDBC; }
+
+.containerConverter{
+  width: 500px;
+  height: 400px;
+  background-color: #4A4A4A;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.contentConverterInput label{ display: block; text-align: center; font-size: 20px; color: #D9D9D9; }
+.contentConverterInput input{
+  padding: 5px;
+  outline: none;
+  border: none;
+  border-bottom:2px solid black;
+  margin: auto;
+  margin-top: 6px;
+  font-size: 25px;
+  width: 150px;
+  text-align: center;
+}
+.containerConverter button{
+  outline: none;
+  border: none;
+  background-color: #FAEDBC;
+  padding: 8px;
+  font-size: 15px;
+  box-shadow: 0px 2px 3px #000;
+  cursor: pointer;
+}
+
+.contentResult{
+  background-color: #dbdbdb;
+  min-width:100px;
+  height: 50px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}.contentResult b{ text-align: center; }
+.containerConverter p{ font-family: Arial, Helvetica, sans-serif; color: #a3a3a3; }
+
+.errorCard{
+  background-color: #a3a3a3;
+  width: 300px;
+  height: 150px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 50%;
+  left: 200%;
+  transform: translate(-50%,-50%);
+  transition: linear 0.4s;
+}.errorCard p{ margin: 10px; }
+.exitErrorCard{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}.exitErrorCard::before{
+  content: "";
+  position: absolute;
+  width: 4px;
+  height:20px;
+  border-radius: 20px;
+  transform: rotate(-45deg);
+  background-color:#FAEDBC;
+}.exitErrorCard i{
+  width: 4px;
+  height:20px;
+  border-radius: 20px;
+  transform: rotate(45deg);
+  background-color:#FAEDBC;
+}
+.errorCardEnter{ left: 50% }
+.errorCardOpacityNone{opacity:0;}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/*---------------- MEDIA QUERIES --------------------------*/
+@media(max-width:600px){
+  .containerConverter{ width: 90% }
+  p{ text-align: center; }
+}
+
+@media(max-width:400px){
+  h1{ font-size: 20px }
+  .contentConverterInput label{ font-size: 15px; }
+}
